@@ -9,6 +9,7 @@ public class Funcionario {
 	private Cargo cargo;
 	private Calendar dataDeAdmissao;
 	private double salarioBase;
+	
 	public int getId() {
 		return id;
 	}
