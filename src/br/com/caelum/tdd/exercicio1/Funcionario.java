@@ -40,5 +40,7 @@ public class Funcionario {
 	public void setSalarioBase(double salarioBase) {
 		this.salarioBase = salarioBase;
 	}
+	
+	
 
 }

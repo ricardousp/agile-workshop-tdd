@@ -12,13 +12,15 @@ public class GeradorDeNotaFiscalTests {
 	private EnviadorDeEmail email;
 	private NotaFiscalDao dao;
 	private GeradorDeNotaFiscal gerador;
+	private SapComunicador sap;
 
 	@Before
 	public void setUp() {
 		email = mock(EnviadorDeEmail.class);
 		dao = mock(NotaFiscalDao.class);
-
-		gerador = new GeradorDeNotaFiscal(email, dao);
+		sap = mock(SapComunicador.class);
+		
+		gerador = new GeradorDeNotaFiscal(email, dao, sap);
 	}
 	
 	@Test
@@ -46,5 +48,14 @@ public class GeradorDeNotaFiscalTests {
 		NotaFiscal nf = gerador.gera(fatura);
 		
 		verify(dao).persiste(nf);
+	}
+	
+	@Test
+	public void deveVerificarOSap() {
+		Fatura fatura = new Fatura(1000, "cliente 1");
+		
+		NotaFiscal nf = gerador.gera(fatura);
+		//Assert do Mock e o verify
+		verify(sap).envia(nf);
 	}
 }

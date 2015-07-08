@@ -5,7 +5,7 @@ public enum Cargo {
 	DESENVOLVEDOR(new DezOuVintePorcento()),
 	DBA(new QuinzeOuVinteCincoPorcento()),
 	TESTER(new QuinzeOuVinteCincoPorcento()),
-	GERENTE_PROJETO(new QuinzeOuVintePorcento());
+	GERENTE_PROJETO(new QuinzeOuVintePorcento());	
 	
 	private RegraDeCalculo regra;
 	

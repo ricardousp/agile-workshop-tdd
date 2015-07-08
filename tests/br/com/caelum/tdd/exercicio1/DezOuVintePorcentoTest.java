@@ -15,6 +15,8 @@ public class DezOuVintePorcentoTest {
 		porcentagem = new DezOuVintePorcento();
 	}
 	
+	// Tem a haver com o salario e nao com o cargo do funcionario
+	// Isolamos a regra do Cargo
 	@Test
 	public void salarioMaiorQue3000(){
 		Funcionario funcionario = new Funcionario();
@@ -29,6 +31,14 @@ public class DezOuVintePorcentoTest {
 		funcionario.setSalarioBase(2000);
 		double salariofinal = porcentagem.calcula(funcionario);
 		assertEquals(2000*0.9, salariofinal, 0.0001);
+	}
+	
+	@Test
+	public void salarioIgual3000(){
+		Funcionario funcionario = new Funcionario();
+		funcionario.setSalarioBase(3000);
+		double salariofinal = porcentagem.calcula(funcionario);
+		assertEquals(3000*0.9, salariofinal, 0.0001);
 	}
 	
 }

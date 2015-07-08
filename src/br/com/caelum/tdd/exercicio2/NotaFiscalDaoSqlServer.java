@@ -1,9 +1,13 @@
 package br.com.caelum.tdd.exercicio2;
 
-public class NotaFiscalDaoSqlServer implements NotaFiscalDao {
+public class NotaFiscalDaoSqlServer implements Acao {
 
-	public void persiste(NotaFiscal nf) {
-		System.out.println("salva nf no banco");
+	@Override
+	public void executa(NotaFiscal nf) {
+		// TODO Auto-generated method stub
+		
 	}
+
+	
 
 }
